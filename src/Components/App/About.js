@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import Cards from '../Cards.js';
+import { cardData } from './team-cards.js';
 
 function Copyright() {
   return (
@@ -59,77 +61,34 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4];
 
 export default function About() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          //<CameraIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Exploring and Visualizing Healthcare Data
+    < >
+      <div className={classes.heroContent}>
+        <Container maxWidth="sm">
+          <Typography component="h1" variant="h2" align="center" color="textMain" gutterBottom>
+            About Us
           </Typography>
-        </Toolbar>
-      </AppBar>
-      <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textMain" gutterBottom>
-              About Us
-            </Typography>
-            <Typography variant="h5" align="center" color="textDark" paragraph>
-              A journey towards creating a Healthcare Data story through data visualizations
-              using React and D3.js. Our final product will be a dashboard that shows the
-              relationship between diagnoses and demographics.
-            </Typography>
-          </Container>
-        </div>
-        <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
-          <Typography component="h4" variant="h2" align="center" color="textMain" gutterBottom>
-            Get To Know Our Team
+          <Typography variant="h5" align="center" color="textDark" paragraph>
+            A journey towards creating a Healthcare Data story through data visualizations
+            using React and D3.js. Our final product will be a dashboard that shows the
+            relationship between diagnoses and demographics.
           </Typography>
-          <Typography variant="h1" align="center" color="textDark" paragraph>
-          </Typography>
-          <Grid container spacing={3}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={6} sm={6} md={6}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the content.
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
         </Container>
-      </main>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
+      </div>
+      <Container className={classes.cardGrid} maxWidth="md">
+        {/* End hero unit */}
+        <Typography component="h4" variant="h2" align="center" color="textMain" gutterBottom>
+          Get To Know Our Team
         </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+        <Typography variant="h1" align="center" color="textDark" paragraph>
         </Typography>
-        <Copyright />
-      </footer>
-      {/* End footer */}
-    </React.Fragment>
+        <Cards cards={cardData} />
+        {/*<Cards /> */}
+      </Container>
+    </>
   );
 }

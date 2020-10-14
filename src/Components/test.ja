@@ -1,0 +1,16 @@
+const App = () => {
+  return (
+      <About path={'/about'} />
+  )
+}
+
+
+//// New file
+
+export default const About = () => {
+  const cards = [1, 2, 3, 4];
+
+  return (
+    <Cards cards={cards}/>
+  )
+}

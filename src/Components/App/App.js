@@ -16,8 +16,7 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import { cards } from "./team-cards";
 import Paper from "@material-ui/core";
-
-
+import About from "./About.js";
 
 function Copyright() {
   return (
@@ -29,36 +28,6 @@ function Copyright() {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
-  );
-}
-
-function Cards(props) {
-  return (
-    <div style={{ marginTop: 20, padding: 30 }}>
-      <Grid container spacing={40} justify="center">
-        {cards.map((card) => (
-          <Grid item key={card.title}>
-            <Card>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  height="140"
-                  image={card.image}
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {card.title}
-                  </Typography>
-                  <Typography component="p">{card.excerpt}</Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </div>
   );
 }
 
@@ -94,8 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-export default function About() {
+export default function App() {
   const classes = useStyles();
 
   return (
@@ -109,28 +77,7 @@ export default function About() {
         </Toolbar>
       </AppBar>
       <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textMain" gutterBottom>
-              About Us
-            </Typography>
-            <Typography variant="h5" align="center" color="textDark" paragraph>
-              A journey towards creating a Healthcare Data story through data visualizations
-              using React and D3.js. Our final product will be a dashboard that shows the
-              relationship between diagnoses and demographics.
-            </Typography>
-          </Container>
-        </div>
-        <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
-          <Typography component="h4" variant="h2" align="center" color="textMain" gutterBottom>
-            Get To Know Our Team
-          </Typography>
-          <Typography variant="h1" align="center" color="textDark" paragraph>
-          </Typography>
-          <Cards />
-        </Container>
+        <About />
       </main>
       {/* Footer */}
       <footer className={classes.footer}>

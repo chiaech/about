@@ -6,14 +6,15 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
-import { cards } from "./team-cards";
 
 function Cards(props) {
+  const cards = props.cards;
+
   return (
     <div style={{ marginTop: 20, padding: 30 }}>
-      <Grid container spacing={40} justify="center">
-        {cards.map(card => (
-          <Grid item key={card.title}>
+      <Grid container spacing={4} justify="center">
+        {cards.map((card) => (
+          <Grid item key={card.title} xs={3} sm={3} md={3}>
             <Card>
               <CardActionArea>
                 <CardMedia
